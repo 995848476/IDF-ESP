@@ -1,3 +1,6 @@
 IDF-ESP工具在开发代码时，引用的头文件报红且函数不能进行跳转，
 解决办法：先编译工程，在build目录下找到compile_commands.json文件，右键复制其路径，打开vscode工作面板，在面板中输入：C/C++:Edit Configration UI（C/C++:编辑配置(UI)）,找到高级配置，找到编译命令，将复制的compile_commands.json路径粘贴进去,然后保存退出，就可以头文件跳转了，
 并且项目下面会出现两个文件：c_cpp_properties.json 和 settings/json
+
+IDF-ESP中的Kconfig文件和sdkconfig文件是IDF-ESP开发工具用来配置和构建项目的宏的。sdkconfig是构建饿时候自动生成的。而Kconfig文件是用来自定义配置宏的。具体的文档，可找官方文档---》API参考---》项目配置页（https://docs.espressif.com/projects/esp-idf/zh_CN/v5.4.1/esp32/api-reference/kconfig.html）
+想了解Kconfig文件的语法，可以参考官方文档---》API参考---》项目配置页---》Kconfig 格式规定---》格式检查器小节中的esp-idf-kconfig链接文档（https://docs.espressif.com/projects/esp-idf-kconfig/）
